@@ -67,14 +67,14 @@ describe('checking the main page performs as expected', () => {
     cy.contains('Subject must be between 5 and 100 characters.').should('be.visible');
   });
 
-  it.only('should display error for Message with less than 19 characters', () => {
+  it('should display error for Message with less than 19 characters', () => {
     cy.get('#subject').clear();
     cy.get('#subject').type('a'.repeat(19));
     cy.get('#submitContact').click();
     cy.contains('Message must be between 20 and 2000 characters.').should('be.visible');
   });
 
-  it.only('should display error for Message with less than 19 characters', () => {
+  it('should display error for Message with more than 2000 characters', () => {
     cy.get('#subject').clear();
     cy.get('#subject').type('a'.repeat(2001));
     cy.get('#submitContact').click();
