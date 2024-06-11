@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('checking the main page performs as expected', () => {
+describe('validating that the main page performs as expected', () => {
   beforeEach('goes to Restful Booker', () => {
     cy.visit('/');
   });
