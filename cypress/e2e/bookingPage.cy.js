@@ -7,7 +7,6 @@ describe('validating that the booking page works as expected', () =>{
     });
 
     it('should have the current date selected when landing on booking page', () => {
-        // Get the current month as a string
        cy.checkCurrentMonth();
       });
 
