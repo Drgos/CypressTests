@@ -2,8 +2,8 @@
 describe('validating that the booking page works as expected', () =>{
     beforeEach('visits the booking page', () => {
         cy.visit('/');
-        cy.contains('button', 'Book this room').click();
-        cy.contains('Today').should('be.visible')
+        cy.clickButton('Book this room');
+        cy.contains('Today').should('be.visible');
     });
 
     it('should have the current date selected when landing on booking page', () => {
@@ -24,7 +24,7 @@ describe('validating that the booking page works as expected', () =>{
 
     it('should cancel the booking form', () => {
         cy.ignoreErr();   
-        cy.clickButton('Cancel')
-        cy.contains('button', 'Book this room').should('be.visible')
+        cy.clickButton('Cancel');
+        cy.contains('button', 'Book this room').should('be.visible');
       })
 })

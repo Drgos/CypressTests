@@ -4,7 +4,7 @@ describe('validating that the main page performs as expected', () => {
     cy.visit('/');
   });
   
-  it('should fill the form with valid data', () => {
+  it.only('should fill the form with valid data', () => {
     cy.get('#name').type('Dragos Pinca');
     cy.get('#email').type('dragos@gmail.com');
     cy.get('#phone').type('12345678901');

@@ -58,7 +58,7 @@ Cypress.Commands.add('notCurrentMonth', () => {
     });
   });
 
-// use it to ignore known errors on specific pages
+// use it to ignore known errors on specific tests
 Cypress.Commands.add('ignoreErr', () =>{
     Cypress.on('uncaught:exception', (err, runnable) => {
         console.error('Uncaught exception detected:', err);
