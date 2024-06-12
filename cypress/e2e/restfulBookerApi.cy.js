@@ -49,4 +49,19 @@ describe('testing the api request to perform as expected', () => {
         })
         })
     })
+
+    it.only('should get all the booking ids', () => {
+        const authToken = Cypress.env('authToken')
+        cy.request({
+            method: 'GET',
+            url: `https://restful-booker.herokuapp.com/booking`,
+            header: {
+                'Authorizatiation': `Bearer ${authToken}`
+            }
+        }).then((getResponse) => {
+            expect(getResponse.status).to.eq(200);
+            const bookingsArray = getResponse.body;
+            cy.log('Bookings Array:', bookingsArray);
+          });
+    })
 })
