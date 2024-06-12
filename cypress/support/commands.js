@@ -66,3 +66,24 @@ Cypress.Commands.add('ignoreErr', () =>{
         return false;
       }); 
 })
+
+//get auth token
+Cypress.Commands.add('getAuthToken', () => {
+  const username = Cypress.env('USERNAME');
+  const password = Cypress.env('PASSWORD');
+  cy.request({
+    method: 'POST',
+    url: 'https://restful-booker.herokuapp.com/auth',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body:{
+      'username': username,
+      'password': password
+    }
+  }).then((response) => {
+    expect(response.status).to.eq(200);
+    const token = response.body.token;
+    Cypress.env('authToken', token);
+  }) 
+})
