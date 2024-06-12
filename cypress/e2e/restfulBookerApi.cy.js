@@ -50,7 +50,7 @@ describe('testing the api request to perform as expected', () => {
         })
     })
 
-    it.only('should get all the booking ids', () => {
+    it('should get all the booking ids', () => {
         const authToken = Cypress.env('authToken')
         cy.request({
             method: 'GET',
